@@ -1,0 +1,103 @@
+Cours Github - SSH
+(Linux)
+
+// SSH //
+
+Pour commencer nous devons lié notre pc avec notre compte github grâce au protocole ssh.
+
+Nous devons générer nos clef ssh:
+  - ssh-keygen
+
+Notre clef par défault sur linux va ce retrouver dans :
+  - /home/user/.ssh
+
+Nous devons avoir deux clefs:
+  - id_rsa (qui est notre clef privé)
+  - id-rsa.pub (qui est notre clef publique)
+
+La clef privé doit être confidentiel
+La clef publique sera à émmetre avec votre partenaire (github dans notre cas)
+
+Une fois les clef générer nous pouvons allez les lires:
+
+cd
+cat .ssh/id-rsa
+cat .ssh/id-rsa.pub
+
+Rendez vous dans votre espace personel github > Settings
+Dans la sidebar à gauche vous retrouver l'onglet SSH and GPG keys
+Cliquer en haut a droite New SSH key
+
+dans title (nommer la machine sur laquel vous voulez lié votre clef example: pc-travail)
+et en dessous vous venez collez votre clef PUBLIQUE !!
+
+
+// Github //
+
+Installer git
+
+sudo apt-get install git
+
+Rendez-vous sur github afin de créé un repo et l'utiliser en ssh
+
+Create repo:
+  - le titre sera le nom de votre repo
+  - la description est un court descriptif de l'appli
+  - Public ou privée (lié au mode payant et gratuit suivant les fonctionalité)
+  - initialisé un README.md il vous pourrez nommer plusieurs indication sur votre repo en y ajoutant une petite mise en page grace au .md (markdown)
+
+ensuite nous allons avoir besoin du lien pour clone notre projet en ssh
+
+monRepository > onglet clone > use ssh > cliker sur le bouton pour copié le lien
+
+ensuite ouvrons un terminal (ctrl + alt + T)
+
+rendez vous dans le dossier ou vous voulez stockez votre votre repo github
+example: /Documents/Dev/GH/
+
+ensuite:
+git clone git@github.com:USER/monRepository.git
+cd monRepository
+
+Pour observer votre repo:
+git status
+
+Ensuite modifions notre README.md
+Attention vous aurez besoin de vim !!
+sudo apt-get install vim
+
+sudo vim README.md
+
+ajouter du texte en dessous de celui existant
+(touche insert de votre clavier à coté de suppr)
+Example: Mon premier commit
+
+(
+  Pour quitter vim
+  - echap
+  - :wq
+
+w: sauvegarder
+q: quitter
+)
+
+Ensuite observer son repo:
+git status
+
+et nous voyons qu'un mise a jour à été faites dans notre repo et quelle ce situe dans README.md
+
+Pour ajouter cette mise a jour a notre repo nous faisons un:
+git add ./README.md
+(nous pourrions aussi faire un 'git add .', ce qui ajouterais toute les modifications réaliser sur notre repo)
+
+maintenant nous allons donnez un nom à notre mise à jour:
+git commit -m 'modification du README.md'
+(commit nous permet de validez notre mise à jour, '-m' lui permet d'ajouter un message à notre commit)
+
+pour enfin envoyez notre mise ajour sur les repos github:
+git push origin master
+(master pour la branch sur laquelle nous voulons pusher notre travail)
+
+Nous irons plus loin dans github dans un autre tuto !
+
+'''

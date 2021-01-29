@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <form id='myForm'>
+        <!--creation d'un formulaire-->
+
+        <input type='text' name="title"></input>
+        <!--saisir des données-->
+
+        <input type='text' name="firstname"></input>
+        <!--saisir des données-->
+
+        <button type="button" onclick='sub()'>Valides</button>
+        <!--creation d'un boutton qui declanche la fonction 'sub' au click-->
+
+    </form>
+
+    <div id="hello">Hello</div>
+    <!-- Ici nous avons une div avec un id 'hello' qui es recupéré et lu dans notre script grace à hello.innerText -->
+
+    <button onclick="welcome()">open alert</button>
+    <!-- notre boutton declanche la fonction 'welcome()' qui elle meme declanche l'ouverture de notree alert() -->
+
+    <div id="content"></div>
+    <!--la div content est en attente de resultat de notre formulaire afin de lui injecte du text grace a .innerText -->
+
+    <script>
+        const form = document.getElementById('myForm') // constante de récupération l'id myForm
+        const hello = document.getElementById('hello') // constante de récupération l'id hello
+        const input = document.getElementById('myInput') // constante de récupération l'id myInput
+        const content = document.getElementById('content') // constante de récupération l'id content
+
+        const allInput = document.querySelectorAll('input') // constante de récupérayion de toutes les balise input
+
+        console.log(hello.innerText) // log tchek  du texte de la balise <div id='hello'>
+            // creation de la fonction "sub" appeler dans le boutton du formulaire id='myForm'
+        function sub() {
+            // variable qui permet stocker les futurs data envoyer depuis notre formulaire  
+            let body = {
+                title: '',
+                firstname: ''
+            };
+
+            console.log(allInput) // log tchek pour tous les balises input  
+
+            // creer une boucle Boucle forEach 
+            allInput.forEach((i) => {
+
+                    if (i.name === 'title') body.title = i.value //si name = title 
+                    else console.log('err') // sinon se sera une err
+
+                    if (i.name === 'firstname') body.firstname = i.value // name = firstname
+                    else console.log('err') // sinon se sera une err 
+
+                    console.log('Each1: ', i.value) // log tchek la boucle each1 de ma valeur (i)
+
+                })
+                // creer une constante qui additionne du text dans le 'p' de 'title' et 'firstname'
+            const addTextContent = document.createElement('p')
+
+            addTextContent.innerText = "Title: " + body.title + ", Firstname: " + body.firstname
+
+            content.appendChild(addTextContent) // on ordonne a l'enfant de creer du text dans le 'body' 
+
+            console.log(body) // log tchek de tous les elements du body  
+
+            alert("VALUE : " + allInput[0].value + ' : ' + allInput[1]
+                    .value) // creer une alerte du 1er et 2eme valeur de tous les balises input
+        }
+
+        function welcome() { // creer une fonction alert 'coucou'
+            alert('coucou')
+        }
+    </script>
+
+</body>
+
+</html>

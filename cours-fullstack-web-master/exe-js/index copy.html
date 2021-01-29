@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <form id='myForm'>
+        <input name="title"></input>
+        <input name="firstname"></input>
+        <button type="button" onclick='sub()'>Valides</button>
+    </form>
+
+    <div id="hello">Hello</div>
+    <button onclick="welcome()">open alert</button>
+
+    <script>
+        const form = document.getElementById('myForm')
+        const input = document.getElementById('myInput')
+
+        const allInput = document.querySelectorAll('input')
+
+
+        function sub() {
+            let item,
+                body = {
+                    title: '',
+                    firstname: ''
+                }
+
+
+            console.log(allInput)
+
+            // Boucle forEach
+            allInput.forEach((i) => {
+
+                if (i.name === 'title') body.title = i.value
+                else console.log('err')
+
+                if (i.name === 'firstname') body.firstname = i.value
+                else console.log('err')
+
+                console.log('Each1: ', i.value)
+            })
+
+            console.log(body)
+
+            // Boucle for
+            // for (item in allInput) {
+
+            //     if (item === 'title') console.log('TITLE2 est le name du input')
+            //     else console.log('err')
+
+            //     if (item === 'firstname') console.log('FIRST2 est le name du input')
+            //     else console.log('err')
+
+            //     console.log('FOR2: ', item.value)
+            // }
+
+            // Boucle for
+            // for (let i = 0; i < allInput.length; i++) {
+
+            //     if (allInput[i] === 'title') console.log('TITLE3 est le name du input')
+            //     else console.log('err')
+
+            //     if (allInput[i] === 'firstname') console.log('FIRST3 est le name du input')
+            //     else console.log('err')
+
+            //     console.log('FOR3: ', allInput[i].value)
+            // }
+
+            // if (input.name === 'title') {
+            //     console.log('TITLE est le name du input')
+            // }
+
+            alert("VALUE : " + allInput[0].value + ' : ' + allInput[1].value)
+        }
+
+        function welcome() {
+            alert('coucou')
+        }
+    </script>
+
+</body>
+
+</html>

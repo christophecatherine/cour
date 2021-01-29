@@ -1,0 +1,85 @@
+coka@coka-pc:~$ ssh ebocto@217.182.206.215
+The authenticity of host '217.182.206.215 (217.182.206.215)' can't be established.
+ECDSA key fingerprint is SHA256:B3RPbGp6/KZN0jy0lu5iDK2ye6qMLZpx2umWUsYeBdc.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '217.182.206.215' (ECDSA) to the list of known hosts.
+ebocto@217.182.206.215's password: 
+Permission denied, please try again.
+ebocto@217.182.206.215's password: 
+Permission denied, please try again.
+ebocto@217.182.206.215's password: 
+
+coka@coka-pc:~$ ssh erbocto@217.182.206.215                                             ALLEZ SUR LE SERVER "erbocto"
+erbocto@217.182.206.215's password:                                                     mp erbocto$
+Welcome to Ubuntu 20.04.1 LTS (GNU/Linux 5.4.0-48-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ System information disabled due to load higher than 1.0
+
+ * Introducing self-healing high availability clusters in MicroK8s.
+   Simple, hardened, Kubernetes for production, from RaspberryPi to DC.
+
+     https://microk8s.io/high-availability
+
+65 updates can be installed immediately.
+0 of these updates are security updates.
+To see these additional updates run: apt list --upgradable
+
+
+*** System restart required ***
+Last login: Wed Dec 16 10:23:01 2020 from 89.88.199.18
+erbocto@vps704695:~$ ls
+website
+erbocto@vps704695:~$ cd website/ ALLEZ SUR LE WEBSITE
+erbocto@vps704695:~/website$ ls
+erbocto@vps704695:~/website$ ls
+site-hola
+erbocto@vps704695:~/website$ sudo mv site-hola/ /var/www/website/ ALLEZ CHERCHER METTRE LE SITE HOLA SUR WEBSITE
+[sudo] password for erbocto: 
+erbocto@vps704695:~/website$ cd /var/www/website/ VOIR LE SITE HOLA SUR LE SERVER WEBSITE
+erbocto@vps704695:/var/www/website$ ls
+drk  florentin  gaetan  monsupersite  site-hola
+erbocto@vps704695:/var/www/website$ sudo mv site-hola/ ./christophe CHANGER LE NOM DU SITE HOLA EN CHRISTOPHE
+erbocto@vps704695:/var/www/website$ ls 
+christophe  drk  florentin  gaetan  monsupersite
+erbocto@vps704695:/var/www/website$ cd /etc/nginx/sites- ACTIVE LE DOSSIER WEBSITE SUR NGINX
+sites-available/ sites-enabled/   
+erbocto@vps704695:/var/www/website$ cd /etc/nginx/sites-
+sites-available/ sites-enabled/   
+erbocto@vps704695:/var/www/website$ cd /etc/nginx/sites-enabled/ VOIR LE DOSSIER WEBSITE SUR SITE ENABLED
+erbocto@vps704695:/etc/nginx/sites-enabled$ ls
+arinfo.conf   defaultNODE    drk-arinfo             gaetan-arinfo.conf  hsuk.onion.conf
+default.conf  defaultPresta  florentin-arinfo.conf  hsuk.conf
+erbocto@vps704695:/etc/nginx/sites-enabled$ sudo touch christophe-arinfo.conf METTRE LE DOSSIER CHRISTOPHE SUR SITE ENABLED
+erbocto@vps704695:/etc/nginx/sites-enabled$ sudo vim christophe-arinfo.conf 
+erbocto@vps704695:/etc/nginx/sites-enabled$ cat gaetan-arinfo.conf 
+server {
+	listen 80;
+	listen [::]:80;
+
+	server_name gaetan.arinfo.tk www.gaetan.arinfo.tk;
+
+	root /var/www/website/gaetan/;
+	index index.html;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
+
+
+erbocto@vps704695:/etc/nginx/sites-enabled$ ^C
+erbocto@vps704695:/etc/nginx/sites-enabled$ sudo vim christophe-arinfo.conf ENVOYER DOSSIER CHRISTOPHE SUR SITE ENABLED
+erbocto@vps704695:/etc/nginx/sites-enabled$ sudo vim christophe-arinfo.conf 
+erbocto@vps704695:/etc/nginx/sites-enabled$ sudo systemctl restart nginx METTRE A JOUR SUR NGINX 
+erbocto@vps704695:/etc/nginx/sites-enabled$ 
+
+/*************************/
+coka@coka-pc:~/Bureau$ scp -r -p ./site-hola/ erbocto@217.182.206.215:website
+erbocto@217.182.206.215's password: 
+index.html                                                                          100%  249    11.5KB/s   00:00    
+coka@coka-pc:~/Bureau$ 
+

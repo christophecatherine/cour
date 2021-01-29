@@ -1,0 +1,256 @@
+┌─[arinfo@parrot]─[~]
+└──╼  $ ssh drk@217.182.206.215
+drk@217.182.206.215's password: 
+Welcome to Ubuntu 20.04.1 LTS (GNU/Linux 5.4.0-48-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ System information disabled due to load higher than 1.0
+
+ * Introducing self-healing high availability clusters in MicroK8s.
+   Simple, hardened, Kubernetes for production, from RaspberryPi to DC.
+
+     https://microk8s.io/high-availability
+
+65 updates can be installed immediately.
+0 of these updates are security updates.
+To see these additional updates run: apt list --upgradable
+
+
+*** System restart required ***
+Last login: Tue Dec 15 10:14:41 2020 from 90.12.112.169
+┌─[drk@vps704695]─[~]
+└──╼  $ ifconfig
+ens3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 217.182.206.215  netmask 255.255.255.255  broadcast 0.0.0.0
+        inet6 fe80::f816:3eff:fe38:20c4  prefixlen 64  scopeid 0x20<link>
+        ether fa:16:3e:38:20:c4  txqueuelen 1000  (Ethernet)
+        RX packets 2666925052  bytes 499681523249 (499.6 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3105686182  bytes 363354535719 (363.3 GB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 6990557  bytes 839513915 (839.5 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 6990557  bytes 839513915 (839.5 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+┌─[drk@vps704695]─[~]
+└──╼  $ ^C
+┌─[✗]─[drk@vps704695]─[~]
+└──╼  $ cd /etc/nginx/sites-enabled/
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ cat 
+arinfo.conf      defaultNODE      drk-arinfo.conf  hsuk.onion.conf
+default.conf     defaultPresta    hsuk.conf        
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ cat drk-arinfo.conf 
+server {
+	listen 80;
+	listen [::]:80;
+
+	server_name drk.arinfo.tk www.drk.arinfo.tk;
+
+	root /var/www/website/drk/;
+	index index.html;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
+
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ cd /var/www/website/drk
+┌─[drk@vps704695]─[/var/www/website/drk]
+└──╼  $ ls
+index.html
+┌─[drk@vps704695]─[/var/www/website/drk]
+└──╼  $ sudo vim index.html 
+[sudo] password for drk: 
+┌─[drk@vps704695]─[/var/www/website/drk]
+└──╼  $ cd ..
+┌─[drk@vps704695]─[/var/www/website]
+└──╼  $ ls
+drk
+┌─[drk@vps704695]─[/var/www/website]
+└──╼  $ cd /etc/nginx/sites-enabled/
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ cat hsuk.
+hsuk.conf        hsuk.onion.conf  
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ cat hsuk.onion.conf 
+server {
+	listen 80;
+	listen [::]:80;
+#	listen 443 ssl http2;
+
+        server_name 3bt4imyp4ydzowyra43iclbhdn7vidowknmardylebuiatnfkq7u5kyd.onion;
+
+	root /var/www/html/;
+	index index.nginx-debian.html;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
+
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ logout
+Connection to 217.182.206.215 closed.
+┌─[arinfo@parrot]─[~]
+└──╼  $ ssh drk@217.182.206.215
+drk@217.182.206.215's password: 
+Welcome to Ubuntu 20.04.1 LTS (GNU/Linux 5.4.0-48-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ System information disabled due to load higher than 1.0
+
+ * Introducing self-healing high availability clusters in MicroK8s.
+   Simple, hardened, Kubernetes for production, from RaspberryPi to DC.
+
+     https://microk8s.io/high-availability
+
+65 updates can be installed immediately.
+0 of these updates are security updates.
+To see these additional updates run: apt list --upgradable
+
+
+*** System restart required ***
+Last login: Wed Dec 16 08:15:35 2020 from 90.12.112.169
+┌─[drk@vps704695]─[~]
+└──╼  $ ls
+Apps
+┌─[drk@vps704695]─[~]
+└──╼  $ cd Apps/
+┌─[drk@vps704695]─[~/Apps]
+└──╼  $ ls
+hsuk  porfolio-quasar  spa
+┌─[drk@vps704695]─[~/Apps]
+└──╼  $ ls
+hsuk  monsupersite  porfolio-quasar  spa
+┌─[drk@vps704695]─[~/Apps]
+└──╼  $ sudo mv monsupersite/ /var/www/
+[sudo] password for drk: 
+┌─[drk@vps704695]─[~/Apps]
+└──╼  $ cd /var/www/monsupersite/
+┌─[drk@vps704695]─[/var/www/monsupersite]
+└──╼  $ ls
+index.html
+┌─[drk@vps704695]─[/var/www/monsupersite]
+└──╼  $ cd
+┌─[drk@vps704695]─[~]
+└──╼  $ cd /etc/nginx/sites-enabled/
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ cat drk-arinfo.conf 
+server {
+	listen 80;
+	listen [::]:80;
+
+	server_name drk.arinfo.tk www.drk.arinfo.tk;
+
+	root /var/www/website/drk/;
+	index index.html;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
+
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo rm drk-arinfo.conf 
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ ls
+arinfo.conf  default.conf  defaultNODE  defaultPresta  hsuk.conf  hsuk.onion.conf
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo systemctl restart nginx
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo touch drk-arinfo.conf
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ ls
+arinfo.conf  default.conf  defaultNODE  defaultPresta  drk-arinfo.conf  hsuk.conf  hsuk.onion.conf
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ cat drk-arinfo.conf 
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo vim drk-arinfo.conf 
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo systemctl restart nginx
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo vim drk-arinfo.conf 
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ cd /var/www/
+┌─[drk@vps704695]─[/var/www]
+└──╼  $ ls
+html  monsupersite  prestashop  website
+┌─[drk@vps704695]─[/var/www]
+└──╼  $ sudo mv monsupersite/ ./website/
+┌─[drk@vps704695]─[/var/www]
+└──╼  $ ls
+html  prestashop  website
+┌─[drk@vps704695]─[/var/www]
+└──╼  $ cd website/
+┌─[drk@vps704695]─[/var/www/website]
+└──╼  $ ls
+drk  monsupersite
+┌─[drk@vps704695]─[/var/www/website]
+└──╼  $ cd
+┌─[drk@vps704695]─[~]
+└──╼  $ cd /etc/nginx/sites-enabled/
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo vim drk-arinfo.conf 
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo systemctl restart nginx
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo vim drk-arinfo.conf 
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo systemctl restart nginx
+Job for nginx.service failed because the control process exited with error code.
+See "systemctl status nginx.service" and "journalctl -xe" for details.
+┌─[✗]─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo vim drk-arinfo.conf 
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo systemctl restart nginx
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo vim drk-arinfo.conf 
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo systemctl restart nginx
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo nginx -t
+nginx: [warn] server name "/var/www/website/monsupersite/" has suspicious symbols in /etc/nginx/sites-enabled/drk-arinfo.conf:7
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo systemctl restart nginx
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo vim drk-arinfo.conf 
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ sudo systemctl restart nginx
+┌─[drk@vps704695]─[/etc/nginx/sites-enabled]
+└──╼  $ 
+
+
+/*****************************************************************/
+
+
+┌─[arinfo@parrot]─[~/Desktop]
+└──╼  $ scp -r -p ./monsupersite drk@217.182.206.215:Apps/ 
+drk@217.182.206.215's password: 
+index.html                                                                                      100%  231    14.4KB/s   00:00    
+┌─[arinfo@parrot]─[~/Desktop]
+└──╼  $ ^C
+┌─[✗]─[arinfo@parrot]─[~/Desktop]
+└──╼  $ 
+
+

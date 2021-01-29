@@ -1,0 +1,65 @@
+Base de github
+
+Ceci est la continuité de 'ssh-github'
+Donc je part du principe que vous savez créé un repo, le cloner, le commit et le push en version de base
+
+***
+
+Nous allons voir comment récupérer un branche depuis notre repo github sur notre machine local (pull)
+Example: depuis github nous allons éditez notre README.md
+(
+  rendez-vous dans votre repo > cliquez sur README.md > et le petit icone d'édition
+  apporter une modification à votre README.md
+  Validez vos modification tout en bas de la page avec le boutton commit
+)
+Ensuite rendez-vous dans votre repo github en ligne de commande (sur votre machine):
+cd /Documents/Dev/gh/monRepository
+git status
+
+et taper ensuite:
+git pull origin master
+(
+  ici nous venons de récupérer le travail éffectuer sur le repo distant dans notre repo local
+  git vous indique d'ailleur quel fichier/dossier à été modifié
+)
+
+***
+
+Nous allons voir les base pour créé, modifier, et supprimer un branche
+
+rendez-vous dans votre repo github en ligne de commande:
+
+cd /Documents/Dev/gh/monRepository
+git status
+(en haut du résultat de notre 'git status' nous voyons sur quels branch nous sommes (master))
+
+si nous voulons voir sur quel branche nous sommes
+git branch
+
+donc si nous voulons créé une branche
+git branch maBranch
+
+et pour changez de branch:
+git checkout maBranch
+
+pour ensuite apporter une copie d'une branche sur notre nouvelle branche
+une fois sur maBranch
+git pull origin uneAutreBranch
+
+pour envoyer votre nouvelle branche sur le dépot distant (github) vous devez apporter des modifications sur votre branche et ensuite la push
+git status
+(checker que l'on est bien sur la branche voulu)
+git add .
+git commit -m 'mon commit de ma nouvelle branche'
+git push origin master
+
+et voila votre nouvelle branche vous attend sur votre dépot github
+
+Comment la supprimer ??
+
+git push origin --delete [nom_de_la_branche]
+(devez absolument ne pas etre sur la branch a supprimer pour la supprimer)
+
+git branch ou git status pour checker sur quel branch vous êtes
+
+'''

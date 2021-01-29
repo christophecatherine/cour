@@ -1,0 +1,46 @@
+// XHR   Comment creer une requête
+
+document.getElementById(`button`).addEventListener(`click`, message)
+
+function message() {
+    // Objet XHR
+    const xhr = new XMLHttpRequest();
+
+    // OPEN
+
+    xhr.open(`GET`, `data.txt`, true)
+
+
+
+    xhr.onload = function() {
+
+        console.log(`READYSTATE`, xhr.readyState);
+
+        if (this.status === 200) {
+
+            document.getElementById('reponse').innerHTML = `
+            <p>${this.responseText}</p>
+            `
+
+
+
+
+            // console.log(this.responseText);
+
+        }
+    }
+
+    xhr.send()
+
+    // Valeurs readyState
+    // 0 : requête n'est pas initialisé
+    // 1 : La connection avec le serveur est établi
+    // 2 : Requête est reçu
+    // 3 : Requête est  en cours de procédure
+    // 4 : Requête est terminé et la réponse est prête
+
+    // Status HTTP
+    // 200: "Ok"
+    // 404: "Page n'existe pas"
+    // 403: "Interdit"
+}

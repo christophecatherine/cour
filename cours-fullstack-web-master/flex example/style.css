@@ -1,0 +1,91 @@
+
+/* General */
+body {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+header {
+    text-align: center;
+}
+
+/* Background */
+.bg-perso {
+    background: beige;
+}
+.bg-aqua {
+    background: aqua;
+}
+
+/* Text Align */
+.txt-center { text-align: center;}
+/* width & height */
+.fullwidth {
+    width: 100%
+}
+.h-75 { height: 75vh;}
+.w-75 { width: 75vw }
+.m-auto { margin: auto; }
+/* Image */
+.full {
+   width: 100%;
+   height: 100%;
+}
+/* Container */
+.cont {
+    background-color: beige;
+    margin: 15px 30px 0 30px;
+    padding: 15px;
+}
+/* Flex */
+.col { display: flex; flex-direction: column; }
+.row { display: flex; }
+.row-reverse { display: flex; flex-direction: row-reverse; }
+.jus-center { display: flex; justify-content: center; }
+.jus-between { display: flex; justify-content: space-around; }
+.al-cnt { display: flex; align-content: space-around; }
+.al-itm-stretch { display: flex; align-items: stretch;}
+.al-itm-center { display: flex; align-items: center;}
+
+/* Components */
+.img-250 {
+    width: 250px;
+    height: 250px;
+}
+.img-radius {
+    border-radius: 20px 20px;
+}
+.item {
+    padding: 15px;
+}
+.item-33 {
+    width: 33%;
+    padding: 15px;
+}
+.item-33 {
+    width: 50%;
+    padding: 15px;
+}
+.btn {
+    margin: 5px;
+    padding: 5px;
+}
+.card {
+    margin: 15px;
+    width: auto;
+    border-radius: 10px;
+    background-color: white;
+}
+.card-w50 {
+    width: 50%;
+}
+.card-body {
+    width: auto;
+    padding: 0 15px 0 15px;
+}
+.card-footer {
+    width: auto;
+    padding: 0 15px 10px 15px;
+}

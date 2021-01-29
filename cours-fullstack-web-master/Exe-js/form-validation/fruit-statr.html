@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Favorite fruit start</title>
+    <style>
+        input:invalid {
+            border: 2px dashed red;
+        }
+        
+        input:valid {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <p>
+            <fieldset>
+                <legend>Qualité<abbr title="Ce champ est obligatoire">*</abbr></legend>
+                <input type="radio" required name="title" id="r1" value="Mr"><label for="r1">M.</label>
+                <input type="radio" required name="title" id="r2" value="Ms"><label for="r2">Mme.</label>
+            </fieldset>
+        </p>
+        <p>
+            <label for="n1">Quel est votre âge ?</label>
+            <!-- L'attribut pattern peut servir de recours pour les navigateurs dont le type number n'est
+               pas implémenté pour input mais qui prennent en charge l'attribut pattern. Veuillez noter
+               que les navigateurs prenant en charge l'attribut pattern ne signalent pas d'erreur quand
+               il est utilisé avec un champ number. Seule son utilisation ici agit en tant que recours. -->
+            <input type="number" min="12" max="120" step="1" id="n1" name="age" pattern="\d+">
+        </p>
+        <p>
+            <label for="t1">Quel est votre fruit favori ?<abbr title="Ce champ est obligatoire">*</abbr></label>
+            <input type="text" id="t1" name="fruit" list="l1" required pattern="[Bb]anane|[Cc]erise|[Cc]itron|[Ff]raise|[Oo]range|[Pp]omme">
+            <datalist id="l1">
+            <option>Banane</option>
+            <option>Cerise</option>
+            <option>Citron</option>
+            <option>Fraise</option>
+            <option>Orange</option>
+            <option>Pomme</option>
+          </datalist>
+        </p>
+        <p>
+            <label for="t2">Quelle est votre adresse électronique ?</label>
+            <input type="email" id="t2" name="email">
+        </p>
+        <p>
+            <label for="t3">Laissez un court message</label>
+            <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+        </p>
+        <p>
+            <button>Soumettre</button>
+        </p>
+    </form>
+</body>
+
+</html>

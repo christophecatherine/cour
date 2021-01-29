@@ -1,0 +1,1016 @@
+// Part 1
+
+// On va additionnner des chaines de caractères avec l'opérateur +
+
+const firstname = "Gavroche";
+const lastname = "Thénardier";
+const age = 11
+const citation = "Je suis tomber par terre, C'est la faute à Voltaire, Le nez dans le ruisseau, C'est la faute à";
+
+let user;
+/*
+//user = firstname + lastname + age;
+//user = "Je m'appelle " + firstname + " " + lastname + " et j'ai " + age + " ans."
+console.log(user);
+
+// part 2
+
+// Les methodes des chaines de caractères :
+
+// méthode concat 
+
+user = firstname.concat(' ', lastname);
+console.log(user);
+
+// part 3
+// Lenght
+
+
+user = firstname.length;
+console.log(user);
+
+// part 3
+// méthode ToUpperCase()
+
+user = firstname.toUpperCase();
+
+user = firstname[0]
+console.log(user);
+
+// part 5 
+// methode endsWith()
+
+user = citation.endsWith("à");
+console.log(user);
+*/
+// part 6
+// méthode includes()
+
+user = citation.includes("Rousseau");
+console.log(user);
+
+// part 7
+// méthode replace()
+
+user = citation.replace(/ruisseau/g, "Tonneau");
+console.log(user);
+
+
+// part 8
+// méthode search()
+
+user = citation.search("ruisseau");
+console.log(user);
+
+// part 9
+// méthode split()
+
+user = citation.split(' ');
+console.log(user);
+
+// part 1
+
+// TEMPLATE LITERALS : Modèles de libéllés
+
+const name = "Gavroche";
+const age = 11;
+
+const hello = "Yo ! je m'appelle ${name} ! Et j'ai ${age} ans."
+console.log(hello);
+
+
+// part 1
+
+// ARRAYS
+
+const Number = [1, 2, 3, 4, 5];
+
+
+const avengers = ["Thor", "IronMan", "SpiderMan"];
+const dc = ["Batman", "Superman", "Flash"];
+console.log(avengers);
+
+const hero = ["Thor", 30, true, { LvlAttack: 20, LvlDefense: 30 },
+    [1, 2, 2],
+    function() { return "Boum!" }
+];
+console.log(hero);
+
+
+// part 2
+
+const légumes = new Array("tomate", "radis", "poireau");
+console.log(légumes);
+
+// LENGHT
+
+const longueur = avengers.length
+console.log(longueur);
+
+// Methode indexOf
+const index = hero.indexOf(true);
+console.log(index);
+
+// Methode push
+avengers.push("Captain Marvel");
+
+
+// Methode unshift
+avengers.unshift("Captain America")
+console.log(avengers);
+
+// Methode pop
+légumes.pop();
+
+
+// Methode shift
+légumes.shift();
+console.log(légumes);
+
+// Methode splice
+Number.splice(1, 3, "Toto");
+console.log(Number);
+
+// Methode reverse
+avengers.reverse();
+console.log(avengers);
+
+// Methode concat
+let newHero = avengers.concat(dc);
+console.log(newHero);
+
+// Les Objects
+
+const user = {
+    firstName: "Hugo",
+    age: 40,
+    adress: {
+        street: "rue de la mairie",
+        postalCode: 44000,
+        city: "Nantes"
+    },
+    language: ["javascript", "ruby", " python"],
+    birthDay: function() {
+        return 2019 - this.age
+    }
+}
+
+
+let foo = user.age;
+
+
+
+
+// nex Oblect()
+let player = new Object();
+player.name = "john";
+player.game = "APEX"
+
+// Template
+
+const user2 = {
+    firstName: "Hugo",
+    age: 40,
+    adress: {
+        street: "rue de la mairie",
+        postalCode: 44000,
+        city: "Nantes"
+    },
+    language: ["javascript", "ruby", " python"],
+    message: function(firstName, age) {
+        console.log(`Bonjour je m' appelle ${this.firstName}, j'ai ${age} ans`);
+    }
+}
+
+
+// Date
+
+const date = new Date();
+
+
+
+let today;
+today = date;
+
+console.log(`Aujourd'hui nous sommes le ${today}`);
+
+let month = date.getMonth();
+console.log(month);
+
+
+let year = date.getFullYear();
+console.log(year);
+
+
+let month = new Array();
+month[0] = "Janvier";
+month[1] = "Février";
+month[2] = "Mars";
+month[3] = "Avril";
+month[4] = "Mai";
+month[5] = "Juin";
+month[6] = "Juillet";
+month[7] = "Aout";
+month[8] = "Septembre";
+month[9] = "Octobre";
+month[10] = "Novembre";
+month[11] = "Décembre";
+
+let mois = month[date.getMonth()];
+
+console.log(mois);
+console.log(user2.message(user2.firstName, user2.age));
+
+
+// If()
+
+
+if (il a cet évènement) {
+alors tu fais ça 
+
+} else {
+    tu fais ça 
+}
+
+
+let numLoto = 10;
+
+
+// Correspond
+if (numLoto == 20) {
+    console.log(`Bravo c'est gagné`);
+} else {
+    console.log(`Désolé tu as perdu...`);
+}
+
+// Ne correspond pas 
+
+let gilet = "bleu";
+
+if (gilet != "jaune") {
+    console.log(`C'est bon, on peux aller faire les courses !`);
+} else {
+    console.log(`on reste chez nous.`);
+}
+
+
+
+// Stristement égale
+const yearOfBirth = 1985;
+
+if (yearOfBirth === 1985) {
+    console.log(`Tu es né en 1985`);
+
+} else {
+    console.log(`Tu n'est pas né en 1985`);
+}
+
+
+
+// If else if
+
+let departement = 72;
+
+if (departement === 35) {
+    console.log(`Tu es de Bretagne`);
+} else if (departement === 85) {
+    console.log(`Tu es de Vendée`);
+} else if (departement === 17) {
+    console.log(`Tu es de Charente Maritime`);
+} else {
+    console.log(`Tu ne viens pas de l'ouest de la France`);
+}
+
+// &&
+
+if (1 === 1 || 4 === 3) {
+    console.log(`c'est vrai`);
+} else {
+    console.log(`c'est faux `);
+}
+
+
+// Switch
+
+let job = "développeur"
+
+switch (job) {
+    case "maçon":
+        console.log(`Il s'occupe des murs`);
+        break;
+    case "plombier":
+        console.log(`Il s'occupe de l'eau`);
+        break;
+    case "électricien":
+        console.log(`Il s'occupe de l'électricité`);
+        break;
+    default:
+        console.log(`Il ne travail pas dans le bâtiment`);
+        break;
+
+}
+
+let day;
+
+switch (new Date().getDay()) {
+    case 0:
+        day = "Dimanche";
+        break;
+    case 1:
+        day = "Lundi";
+        break;
+    case 2:
+        day = "Mardi";
+        break;
+    case 3:
+        day = "Mercredi";
+        break;
+    case 3:
+        day = "Jeudi";
+        break;
+    case 4:
+        day = "Jeudi";
+        break;
+    case 5:
+        day = "Vendredi";
+        break;
+    case 6:
+        day = "Samedi";
+        break;
+}
+
+
+console.log(`Aujourd'hui on est le ${day}`);
+
+
+// Functions
+
+// Déclaration
+
+let hello = function() {
+    console.log(`Hello`);
+}
+console.log(hello());
+
+// part 2
+
+let superficie = function(largeur, longueur) {
+    return `La surface est de ${largeur * longueur} m2.`
+}
+
+console.log(superficie(8, 10));
+
+// part 3
+
+let calculPérimètre = function(rayon) {
+    let périmètre = 2 * Math.PI * rayon
+    return périmètre
+}
+
+console.log(calculPérimètre(5));
+
+// part 4
+// IIFE
+(function() {
+    console.log(`Je suis une function IIFE`);
+})();
+
+(
+    function(name) {
+        console.log(`Bonjour ${name}`);
+    }
+)("Coco");
+
+// Méthode
+
+const Member = {
+    add: function() {
+        console.log(`ajouter une personne`);
+    },
+    edit: function(player) {
+        console.log(`le nom du joueur ${player} est modifié`);
+
+    }
+
+}
+console.log(Member.edit("John"));
+
+
+// Les boucles
+
+for (let distanceMarathon = 5; distanceMarathon < 42; distanceMarathon++)
+
+    console.log(distanceMarathon);
+
+// part 2
+
+let player = [`Chaudard`, `Pitivier`, `Tassin`, `Colonel Blancher`];
+for (let i = 0; i < 4; i++) {
+    console.log(player[i]);
+}
+
+// part 3
+for (let i = 0; i < 4; i++) {
+    if (player[i] === "Pitivier") {
+        console.log(`${player[i] } : j'ai glisser chef !`);
+    }
+}
+
+// While 
+
+let fruits = ["pomme", "poire", "banane", "fraise"];
+let i = 0;
+while (i <= fruits.length) {
+
+    console.log(fruits[i]);
+    i++
+}
+
+
+// Do While 
+
+let fruits = ["pomme", "poire", "banane", "fraise", "carotte"];
+let i = 0;
+do {
+    console.log(fruits[i]);
+    i++
+}
+
+while (
+    i < fruits.length
+)
+
+// DOM - Document Object Model
+
+// Style
+let liste;
+
+
+liste = document.querySelector(`li`);
+liste = document.querySelector(`li:nth-child(3)`)
+
+liste.style.color = "red"
+liste.style.backgroundColor = "blue";
+
+
+liste = document.querySelectorAll(`ul li`)
+liste[1].style.color = "red"
+
+for (var i = 0; i < liste.length; i++) {
+   liste[i].style.backgroundColor = "blue"
+    liste[i].style.cssText = "color : #fff; background-color: green"
+}
+
+
+console.log(liste);
+
+// DOM - Document Object Model
+
+let n;
+
+n = document.getElementById(`course-liste`)
+n.textContent = "Coucou"
+n.style.color = "red"
+
+console.log(n);
+
+
+let m;
+m = document.getElementById(`liste`)
+m.innerHTML
+m.innerHTML = "<h3>Coucou</h3>"
+
+console.log(m);
+
+// DOM - Document Object Model
+
+let liste;
+liste = document.getElementsByClassName(`collection-item`)
+liste[1].style.color = "red"
+liste[2].textContent = "des fraises"
+
+for (var i = 0; i < liste.length; i++) {
+    liste[i].style.color = "red"
+}
+
+console.log(liste);
+
+// DOM - Document Object Model
+
+//NodeList
+
+let n = document.querySelectorAll("li")
+console.log(n[1]);
+
+n.forEach(function(li) {
+    li.style.backgroundColor = "green"
+})
+
+
+//HTMLCollection
+let n = document.getElementsByTagName("li")
+
+
+n.forEach(function(li) {
+    li.style.backgroundColor = "green"
+})
+
+
+for (var i = 0; i < n.length; i++) {
+    n[i].style.backgroundColor = "green"
+}
+
+
+Array.from(n).forEach(function(li) {
+    li.style.backgroundColor = "red"
+})
+
+console.log(n);
+
+// DOM - Document Object Model
+
+const h3 = document.querySelector(`h3`)
+    
+    h3.onclick = function() {
+        console.log("Coucou");
+    }
+
+    h3.onmouseover = function() {
+        console.log("hop là !");
+    }
+
+
+            h3.addEventListener("click", function(e) {
+                console.log(e.target);
+            })
+    
+
+const form = document.getElementById("main")
+
+form.addEventListener('mousemove', mouseTracking);
+
+function mouseTracking(e) {
+    h3.textContent = `L'axe X: ${e.offsetX} - L'axe Y: ${e.offsetY}`
+}
+
+function messageBienvenue() {
+    let delay = new Date().getTime() + 4000
+    while (new Date() < delay) {}
+    //console.log("Bienvenue");
+    prompt(`Bonjour, quel votre prénom ?`)
+}
+
+messageBienvenue()
+
+// DOM - Document Object Model
+
+let li = document.querySelector(`li`)
+
+let n = li
+n = li.getAttribute(`class`)
+n = li.setAttribute(`style`, `font-style: italic; color:red`)
+li.style.fontSize = "30px"
+
+li.removeAttribute("style")
+console.log(n);
+
+
+let img = document.querySelector(`img`);
+img.onclick = function() {
+    //let src = img.getAttribute("src")
+    //alert(src)
+    let src = img.setAttribute(`src`, "https://cdn.1min30.com/wp-content/uploads/2019/10/0006_Le-Mans-Logo-500x281.jpg")
+}
+
+console.log(img);
+
+
+// DOM - Document Object Model
+
+let nav;
+
+
+const liste = document.querySelector(`li.collection-item`)
+nav = liste.parentNode.parentNode.parentNode
+nav = liste.parentNode.style.color = "red"
+
+nav = liste.childNodes
+nav = liste.children
+nav = liste.firstChild
+nav = liste.lastChild
+nav = liste.firstElementChild
+
+console.log(nav);
+
+// DOM - Document Object Mode
+
+localStorage.setItem(`name`, `Toto`)
+localStorage.setItem(`age`, `100`)
+
+sessionStorage.setItem(`name`, `Sandra`)
+
+// localStorage.removeItem(`name`)
+
+let name = localStorage.getItem(`name`)
+
+localStorage.clear()
+
+
+// créer l'évènement save()
+
+function save() {
+    let tache = document.getElementById(`tache`).value;
+    localStorage.setItem(`nameTask`, tache)
+}
+
+
+// créer l'évènement remove()
+function remove() {
+    document.getElementById(`tache`).value = ``;
+    localStorage.removeItem(`nameTask`)
+}
+
+// DOM - Document Object Mode
+
+const lienGoogle = document.getElementById(`google`)
+const cg = document.getElementById(`cg`)
+
+lienGoogle.addEventListener(`click`, function(e) {
+    if (!cg.checked) {
+        e.preventDefault()
+
+    }
+
+})
+
+// DOM - Document Object Model  COMMENT AJOUTER DES BONBONS A LA LISTE😀️
+
+// Définir l'interface
+
+const form = document.querySelector(`#course-form`),
+    listeTache = document.querySelector(`.collection`),
+    supprimerListe = document.querySelector(`.supprimer-course`),
+    contenuTache = document.querySelector(`#contenuTache`);
+
+// Apllication
+malistedeTache()
+
+function malistedeTache() {
+    // Ajouter un évènement
+    form.addEventListener(`submit`, ajouterUneTache);
+}
+
+// Ajouter une tâche
+function ajouterUneTache(e) {
+    if (contenuTache.value === '') {
+        alert(`Ajouter une tâche`)
+    }
+
+    // Ajouter une balise
+    const li = document.createElement(`li`)
+
+    // Ajouter une classe <li>
+    li.className = "collection-item";
+
+    // Relier le contenu du formulaire dans <li>
+    li.appendChild(document.createTextNode(contenuTache.value));
+
+    // Créer le lien <a>
+    const link = document.createElement(`a`);
+
+    // Ajouter une classe à <a>
+    link.className = `delete-item secondary-content`;
+
+    // Ajouter l'icone
+    link.innerHTML = `<ion-icon name="close-circle"><ion-icon>`;
+
+    // Relier <a> dans le <li>
+    li.appendChild(link);
+
+    // Relier <li> à <ul>
+    listeTache.appendChild(li);
+
+    contenuTache.value = ``
+
+    e.preventDefault()
+}
+
+// DOM - Document Object Model  COMMENT AJOUTER "voulez vous vraiment effacer"😀️
+
+// Définir l'interface
+
+const form = document.querySelector(`#course-form`),
+    listeTache = document.querySelector(`.collection`),
+    supprimerListe = document.querySelector(`.supprimer-course`),
+    contenuTache = document.querySelector(`#contenuTache`);
+
+// Apllication
+malistedeTache()
+
+function malistedeTache() {
+    // Ajouter un évènement
+    form.addEventListener(`submit`, ajouterUneTache);
+
+    // Supprimer une tâche
+    listeTache.addEventListener(`click`, supprimerUneTache)
+}
+
+// Ajouter une tâche
+function ajouterUneTache(e) {
+    if (contenuTache.value === '') {
+        alert(`Ajouter une tâche`)
+    }
+
+    // Ajouter une balise
+    const li = document.createElement(`li`)
+
+    // Ajouter une classe <li>
+    li.className = "collection-item";
+
+    // Relier le contenu du formulaire dans <li>
+    li.appendChild(document.createTextNode(contenuTache.value));
+
+    // Créer le lien <a>
+    const link = document.createElement(`a`);
+
+    // Ajouter une classe à <a>
+    link.className = `delete-item secondary-content`;
+
+    // Ajouter l'icone
+    link.innerHTML = `<ion-icon name="close-circle"><ion-icon>`;
+
+    // Relier <a> dans le <li>
+    li.appendChild(link);
+
+    // Relier <li> à <ul>
+    listeTache.appendChild(li);
+
+    contenuTache.value = ``
+
+    e.preventDefault()
+}
+
+// Supprimer une tâche
+function supprimerUneTache(e) {
+    if (e.target.parentElement.classList.contains(`delete-item`)) {
+        if (confirm(`Voulez-vous vraiment supprimer ?`))
+            e.target.parentElement.parentElement.remove();
+    }
+}
+
+// DOM - Document Object Model  COMMENT SUPPRIMER LA LISTE DE TACHE (PENSEZ A ENLEVER LE HREF DANS LE HTML)  <a class="supprimer-course btn" href="">Effacer</a>😀️
+
+// Définir l'interface
+
+const form = document.querySelector(`#course-form`),
+    listeTache = document.querySelector(`.collection`),
+    supprimerListe = document.querySelector(`.supprimer-course`),
+    contenuTache = document.querySelector(`#contenuTache`);
+
+// Apllication
+malistedeTache()
+
+function malistedeTache() {
+    // Ajouter un évènement
+    form.addEventListener(`submit`, ajouterUneTache);
+
+    // Supprimer une tâche
+    listeTache.addEventListener(`click`, supprimerUneTache)
+
+    // Nettoyer la liste de tâche
+    supprimerListe.addEventListener(`click`, nettoyerLaListe)
+}
+
+// Ajouter une tâche
+function ajouterUneTache(e) {
+    if (contenuTache.value === '') {
+        alert(`Ajouter une tâche`)
+    }
+
+    // Ajouter une balise
+    const li = document.createElement(`li`)
+
+    // Ajouter une classe <li>
+    li.className = "collection-item";
+
+    // Relier le contenu du formulaire dans <li>
+    li.appendChild(document.createTextNode(contenuTache.value));
+
+    // Créer le lien <a>
+    const link = document.createElement(`a`);
+
+    // Ajouter une classe à <a>
+    link.className = `delete-item secondary-content`;
+
+    // Ajouter l'icone
+    link.innerHTML = `<ion-icon name="close-circle"><ion-icon>`;
+
+    // Relier <a> dans le <li>
+    li.appendChild(link);
+
+    // Relier <li> à <ul>
+    listeTache.appendChild(li);
+
+    contenuTache.value = ``
+
+    e.preventDefault()
+}
+
+// Supprimer une tâche
+function supprimerUneTache(e) {
+    if (e.target.parentElement.classList.contains(`delete-item`)) {
+        if (confirm(`Voulez-vous vraiment supprimer ?`))
+            e.target.parentElement.parentElement.remove();
+    }
+}
+
+
+// Nettoyer la liste de tâche
+
+function nettoyerLaListe() {
+    listeTache.innerHTML = ''
+}
+
+// DOM - Document Object Model FILTRER UNE LISTE DE TACHE 😀️
+
+// Définir l'interface
+
+const form = document.querySelector(`#course-form`),
+    listeTache = document.querySelector(`.collection`),
+    supprimerListe = document.querySelector(`.supprimer-course`),
+    contenuTache = document.querySelector(`#contenuTache`),
+    filtrer = document.querySelector(`#filter`);
+
+// Apllication
+malistedeTache()
+
+function malistedeTache() {
+    // Ajouter un évènement
+    form.addEventListener(`submit`, ajouterUneTache);
+
+    // Supprimer une tâche
+    listeTache.addEventListener(`click`, supprimerUneTache)
+
+    // Nettoyer la liste de tâche
+    supprimerListe.addEventListener(`click`, nettoyerLaListe)
+
+    //  Flitre les tâches
+    filtrer.addEventListener(`keyup`, filtrerLesTaches)
+
+}
+
+// Ajouter une tâche
+function ajouterUneTache(e) {
+    if (contenuTache.value === '') {
+        alert(`Ajouter une tâche`)
+    }
+
+    // Ajouter une balise
+    const li = document.createElement(`li`)
+
+    // Ajouter une classe <li>
+    li.className = "collection-item";
+
+    // Relier le contenu du formulaire dans <li>
+    li.appendChild(document.createTextNode(contenuTache.value));
+
+    // Créer le lien <a>
+    const link = document.createElement(`a`);
+
+    // Ajouter une classe à <a>
+    link.className = `delete-item secondary-content`;
+
+    // Ajouter l'icone
+    link.innerHTML = `<ion-icon name="close-circle"><ion-icon>`;
+
+    // Relier <a> dans le <li>
+    li.appendChild(link);
+
+    // Relier <li> à <ul>
+    listeTache.appendChild(li);
+
+    contenuTache.value = ``
+
+    e.preventDefault()
+}
+
+// Supprimer une tâche
+function supprimerUneTache(e) {
+    if (e.target.parentElement.classList.contains(`delete-item`)) {
+        if (confirm(`Voulez-vous vraiment supprimer ?`))
+            e.target.parentElement.parentElement.remove();
+    }
+}
+
+
+// Nettoyer la liste de tâche
+
+function nettoyerLaListe() {
+    listeTache.innerHTML = ''
+}
+
+// Flitrer 
+function filtrerLesTaches(e) {
+    const contenuClavier = e.target.value.toLowerCase()
+
+    document.querySelectorAll(`.collection-item`).forEach(
+        function(tache) {
+            const motCle = tache.firstChild.textContent;
+            if (motCle.toLocaleLowerCase().indexOf(contenuClavier) != -1) {
+                tache.getElementsByClassName.display = `block`
+            } else {
+                tache.style.display = `none`
+            }
+        }
+    );
+
+
+    console.log(contenuClavier);
+}
+
+// XHR  JSON 😀️
+
+document.getElementById(`button`).addEventListener(`click`, message)
+
+function message() {
+    // Objet XHR
+    const xhr = new XMLHttpRequest();
+
+    // OPEN
+
+    xhr.open(`GET`, `data.txt`, true)
+
+
+
+    xhr.onload = function() {
+
+        console.log(`READYSTATE`, xhr.readyState);
+
+        if (this.status === 200) {
+
+            document.getElementById('reponse').innerHTML = `
+            <p>${this.responseText}</p>
+            `
+
+
+
+
+            // console.log(this.responseText);
+
+        }
+    }
+
+    xhr.send()
+
+    // Valeurs readyState
+    // 0 : requête n'est pas initialisé
+    // 1 : La connection avec le serveur est établi
+    // 2 : Requête est reçu
+    // 3 : Requête est  en cours de procédure
+    // 4 : Requête est terminé et la réponse est prête
+
+    // Status HTTP
+    // 200: "Ok"
+    // 404: "Page n'existe pas"
+    // 403: "Interdit"
+}
+
+// XHR  REQUETE JSON 😀️
+
+document.getElementById(`button`).addEventListener(`click`, message)
+
+function message() {
+    // Objet XHR
+    const xhr = new XMLHttpRequest();
+
+    // OPEN
+
+    xhr.open(`GET`, `user.json`, true)
+
+
+
+    xhr.onload = function() {
+
+
+        if (this.status === 200) {
+
+            const user = JSON.parse(this.responseText);
+
+
+            document.getElementById('reponse').innerHTML = `
+           <ul>
+                <li>id : ${user.id}</li>
+                <li>Nom : ${user.name}</li>
+                <li>Marrié : ${user.married}</li>
+           
+           </ul>
+            `
+
+
+        }
+    }
+
+    xhr.send()
+
+
+}

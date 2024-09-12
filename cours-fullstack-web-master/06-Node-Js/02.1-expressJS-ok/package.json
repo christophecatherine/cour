@@ -4,7 +4,7 @@
   "description": "Doc Officiel de ExpressJS https://expressjs.com/fr/starter/hello-world.html",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.21.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

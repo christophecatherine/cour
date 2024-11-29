@@ -13,7 +13,7 @@
     "fs": "0.0.1-security",
     "handlebars": "^4.5.3",
     "hbs": "^4.0.6",
-    "mongoose": "^5.7.13",
+    "mongoose": "^6.0.4",
     "path": "^0.12.7"
   },
   "devDependencies": {
